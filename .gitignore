@@ -2,3 +2,4 @@ data/
 .venv/
 archive/
 CT-KIDNEY-DATASET-Normal-Cyst-Tumor-Stone/
+.vscode
