@@ -1,0 +1,19 @@
+# Étape 1 — e0 + lutte contre le sur-apprentissage
+name: m1-e1-regul
+model:
+  name: model1
+  params: {dropout: 0.3}
+data:
+  img_size: 128
+  augment: strong          # NOUVEAU : rotation, zoom, translation, contraste, bruit
+train:
+  epochs: 30               # NOUVEAU : plus d'epochs, l'augmentation ralentit l'apprentissage
+  batch_size: 64
+  lr: 0.001
+  weight_decay: 0.0001
+  class_weights: true
+  label_smoothing: 0.1     # NOUVEAU
+  select_metric: f1_macro  # NOUVEAU : meilleur modèle choisi sur le F1 macro
+  patience: 8
+  min_epochs: 15           # pas d'early stopping avant la fin de la montée du LR (epoch 9) + marge
+seed: 42

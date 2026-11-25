@@ -1,0 +1,68 @@
+{
+  "run": "m1-e3-mix-s43-v1",
+  "weights": "best.pt",
+  "split": "test",
+  "n_samples": 1975,
+  "accuracy": 0.7924050632911392,
+  "f1_macro": 0.6575915351804144,
+  "per_class": {
+    "Cyst": {
+      "precision": 0.7893890675241158,
+      "recall": 0.9571150097465887,
+      "f1-score": 0.8651982378854626,
+      "support": 513.0
+    },
+    "Normal": {
+      "precision": 0.7907608695652174,
+      "recall": 1.0,
+      "f1-score": 0.8831562974203339,
+      "support": 873.0
+    },
+    "Stone": {
+      "precision": 0.7974683544303798,
+      "recall": 0.84,
+      "f1-score": 0.8181818181818182,
+      "support": 225.0
+    },
+    "Tumor": {
+      "precision": 1.0,
+      "recall": 0.03296703296703297,
+      "f1-score": 0.06382978723404255,
+      "support": 364.0
+    }
+  },
+  "confusion_matrix": {
+    "labels": [
+      "Cyst",
+      "Normal",
+      "Stone",
+      "Tumor"
+    ],
+    "matrix": [
+      [
+        491,
+        0,
+        22,
+        0
+      ],
+      [
+        0,
+        873,
+        0,
+        0
+      ],
+      [
+        36,
+        0,
+        189,
+        0
+      ],
+      [
+        95,
+        231,
+        26,
+        12
+      ]
+    ]
+  }
+}

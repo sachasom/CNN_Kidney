@@ -1,0 +1,33 @@
+name: m1-e4-residual
+model:
+  name: model1
+  params:
+    dropout: 0.3
+    block: residual
+    widths:
+    - 32
+    - 64
+    - 128
+    - 256
+    - 256
+    drop2d: 0.1
+data:
+  img_size: 128
+  augment: strong
+  crop: true
+train:
+  epochs: 30
+  batch_size: 64
+  lr: 0.001
+  weight_decay: 0.0001
+  class_weights: false
+  sampler: balanced
+  mixup:
+    alpha: 0.4
+    cutmix_prob: 0.5
+    prob: 0.8
+  label_smoothing: 0.1
+  select_metric: f1_macro
+  patience: 8
+  min_epochs: 15
+seed: 42

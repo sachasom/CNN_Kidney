@@ -1,0 +1,68 @@
+{
+  "run": "m1-e1-regul-s43-v1",
+  "weights": "best.pt",
+  "split": "test",
+  "n_samples": 1975,
+  "accuracy": 0.6121518987341772,
+  "f1_macro": 0.4408330128411936,
+  "per_class": {
+    "Cyst": {
+      "precision": 0.6330049261083743,
+      "recall": 0.5009746588693957,
+      "f1-score": 0.55930359085963,
+      "support": 513.0
+    },
+    "Normal": {
+      "precision": 0.604989604989605,
+      "recall": 1.0,
+      "f1-score": 0.7538860103626943,
+      "support": 873.0
+    },
+    "Stone": {
+      "precision": 0.626984126984127,
+      "recall": 0.3511111111111111,
+      "f1-score": 0.45014245014245013,
+      "support": 225.0
+    },
+    "Tumor": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 364.0
+    }
+  },
+  "confusion_matrix": {
+    "labels": [
+      "Cyst",
+      "Normal",
+      "Stone",
+      "Tumor"
+    ],
+    "matrix": [
+      [
+        257,
+        242,
+        14,
+        0
+      ],
+      [
+        0,
+        873,
+        0,
+        0
+      ],
+      [
+        41,
+        105,
+        79,
+        0
+      ],
+      [
+        108,
+        223,
+        33,
+        0
+      ]
+    ]
+  }
+}

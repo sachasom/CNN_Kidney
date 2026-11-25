@@ -1,0 +1,68 @@
+{
+  "run": "m1-e4-residual-s44-v1",
+  "weights": "best.pt",
+  "split": "test",
+  "n_samples": 1975,
+  "accuracy": 0.709873417721519,
+  "f1_macro": 0.6786853170724139,
+  "per_class": {
+    "Cyst": {
+      "precision": 0.8217592592592593,
+      "recall": 0.6920077972709552,
+      "f1-score": 0.7513227513227513,
+      "support": 513.0
+    },
+    "Normal": {
+      "precision": 0.7043726235741445,
+      "recall": 0.8487972508591065,
+      "f1-score": 0.7698701298701298,
+      "support": 873.0
+    },
+    "Stone": {
+      "precision": 0.7829787234042553,
+      "recall": 0.8177777777777778,
+      "f1-score": 0.8,
+      "support": 225.0
+    },
+    "Tumor": {
+      "precision": 0.4765625,
+      "recall": 0.33516483516483514,
+      "f1-score": 0.3935483870967742,
+      "support": 364.0
+    }
+  },
+  "confusion_matrix": {
+    "labels": [
+      "Cyst",
+      "Normal",
+      "Stone",
+      "Tumor"
+    ],
+    "matrix": [
+      [
+        355,
+        105,
+        51,
+        2
+      ],
+      [
+        0,
+        741,
+        0,
+        132
+      ],
+      [
+        41,
+        0,
+        184,
+        0
+      ],
+      [
+        36,
+        206,
+        0,
+        122
+      ]
+    ]
+  }
+}

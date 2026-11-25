@@ -1,0 +1,24 @@
+# Étape 5 — e4 SANS MixUp/sampler = e2 (recadrage + régularisation) + architecture résiduelle
+name: m1-e5-residual-nomix
+model:
+  name: model1
+  params:                  # architecture résiduelle de e4 (seule différence avec e2)
+    dropout: 0.3
+    block: residual
+    widths: [32, 64, 128, 256, 256]
+    drop2d: 0.1
+data:
+  img_size: 128
+  augment: strong
+  crop: true
+train:
+  epochs: 30
+  batch_size: 64
+  lr: 0.001
+  weight_decay: 0.0001
+  class_weights: true
+  label_smoothing: 0.1
+  select_metric: f1_macro
+  patience: 8
+  min_epochs: 15           # pas d'early stopping avant la fin de la montée du LR (epoch 9) + marge
+seed: 42

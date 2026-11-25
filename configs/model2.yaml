@@ -1,0 +1,21 @@
+model:
+  name: model2          # ResNet18 pré-entraîné ImageNet
+  params:
+    pretrained: true
+    dropout: 0.3
+
+data:
+  img_size: 224         # résolution native de ResNet, les petites lésions restent visibles
+  augment: strong       # flip + rotation/zoom/translation + contraste + bruit (src/augment.py)
+
+train:
+  epochs: 15
+  batch_size: 32
+  lr: 0.0003            # plus faible qu'en from scratch : on ajuste des poids déjà bons
+  weight_decay: 0.0001
+  class_weights: true
+  label_smoothing: 0.1  # limite la sur-confiance
+  select_metric: f1_macro  # meilleur modèle choisi sur le F1 macro de validation (classes déséquilibrées)
+  patience: 5           # early stopping : arrêt si pas d'amélioration pendant 5 epochs
+
+seed: 42
